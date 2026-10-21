@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       YS | Yoast Primary Cat
- * Plugin URI:        https://github.com/ysaintlary/sls-yoast-primary-cat
+ * Plugin URI:        https://github.com/ysaintlary/yoast-primary-cat
  * Description:       Importe les primary categories Yoast WooCommerce depuis un CSV (SKU → category ID).
  * Version:           1.0.0
  * Requires at least: 6.5
@@ -10,7 +10,7 @@
  * Author URI:        https://ysaintlary.com
  * License:           GPL-3.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain:       sls-yoast-primary-cat
+ * Text Domain:       yoast-primary-cat
  * Domain Path:       /languages
  *
  * WC requires at least: 8.0
@@ -40,7 +40,7 @@ add_action( 'admin_menu', function () {
 		'Import Primary Categories',
 		'Import Primary Cat',
 		'manage_woocommerce',
-		'sls-primary-cat-import',
+		'ys-primary-cat-import',
 		'ys_primary_cat_render_page'
 	);
 } );
@@ -55,7 +55,7 @@ function ys_primary_cat_render_page() {
 	echo '<div class="wrap">';
 	echo '<h1>Import Primary Categories Yoast</h1>';
 
-	if ( isset( $_POST['sls_run_import'] ) && check_admin_referer( 'sls_primary_cat_import' ) ) {
+	if ( isset( $_POST['ys_run_import'] ) && check_admin_referer( 'ys_primary_cat_import' ) ) {
 		ys_primary_cat_process();
 	} else {
 		$csv_path = plugin_dir_path( __FILE__ ) . 'data/primary-categories.csv';
@@ -77,8 +77,8 @@ function ys_primary_cat_render_page() {
 			echo '<div class="notice notice-info"><p>Fichier CSV trouvé : <strong>' . esc_html( $count ) . ' produits</strong> à traiter.</p></div>';
 			echo '<p>Ce plugin met à jour le champ <code>_yoast_wpseo_primary_product_cat</code> pour chaque produit identifié par son SKU.</p>';
 			echo '<form method="post">';
-			wp_nonce_field( 'sls_primary_cat_import' );
-			echo '<input type="hidden" name="sls_run_import" value="1">';
+			wp_nonce_field( 'ys_primary_cat_import' );
+			echo '<input type="hidden" name="ys_run_import" value="1">';
 			submit_button( 'Lancer l\'import', 'primary', 'submit', true );
 			echo '</form>';
 		}

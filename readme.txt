@@ -32,7 +32,7 @@ Place a file named `primary-categories.csv` in the `data/` folder of the plugin:
 
 == Installation ==
 
-1. Upload the `sls-yoast-primary-cat` folder to `/wp-content/plugins/`
+1. Upload the `yoast-primary-cat` folder to `/wp-content/plugins/`
 2. Activate the plugin through the "Plugins" menu in WordPress
 3. Ensure the CSV file is in the `data/` subfolder
 
