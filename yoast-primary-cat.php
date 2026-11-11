@@ -24,26 +24,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'YS_YOAST_PRIMARY_CAT_VERSION', '1.0.0' );
 
+require_once __DIR__ . '/lib/wp-plugin-base/wp-plugin-base-runtime-updater.php';
+
 /* ─── Compatibilité HPOS ─── */
 
-add_action( 'before_woocommerce_init', function () {
-	if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
-		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__ );
+add_action(
+	'before_woocommerce_init',
+	function () {
+		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__ );
+		}
 	}
-} );
+);
 
 /* ─── Menu admin ─── */
 
-add_action( 'admin_menu', function () {
-	add_submenu_page(
-		'woocommerce',
-		'Import Primary Categories',
-		'Import Primary Cat',
-		'manage_woocommerce',
-		'ys-primary-cat-import',
-		'ys_primary_cat_render_page'
-	);
-} );
+add_action(
+	'admin_menu',
+	function () {
+		add_submenu_page(
+			'woocommerce',
+			'Import Primary Categories',
+			'Import Primary Cat',
+			'manage_woocommerce',
+			'ys-primary-cat-import',
+			'ys_primary_cat_render_page'
+		);
+	}
+);
 
 /* ─── Page d'import ─── */
 
