@@ -4,7 +4,7 @@ Tags: woocommerce, yoast, primary category, csv, import
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -37,6 +37,15 @@ Place a file named `primary-categories.csv` in the `data/` folder of the plugin:
 3. Ensure the CSV file is in the `data/` subfolder
 
 == Changelog ==
+
+= 1.0.2 =
+* Fix - fix: correct CRLF receipt checksums and update Tested up to 7.1.
+* Update - Release 1.0.1.
+* Fix - fix: add WORDPRESS_TEST_PLUGINS for Plugin Check WooCommerce dependency.
+* Update - chore: enable readiness/quality/security packs with PUC exclusions.
+* Update - refactor: rename slug from sls-yoast-primary-cat to yoast-primary-cat.
+* Add - feat: initial plugin setup with wp-plugin-base v1.10.11.
+
 
 = 1.0.1 =
 * Fix - fix: add WORDPRESS_TEST_PLUGINS for Plugin Check WooCommerce dependency.
