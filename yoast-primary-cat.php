@@ -3,7 +3,7 @@
  * Plugin Name:       YS | Yoast Primary Cat
  * Plugin URI:        https://github.com/ysaintlary/yoast-primary-cat
  * Description:       Importe les primary categories Yoast WooCommerce depuis un CSV (SKU → category ID).
- * Version:           1.0.0
+ * Version: 1.0.1
  * Requires at least: 6.5
  * Requires PHP:      8.0
  * Author:            Yves Saint-Lary
