@@ -2,7 +2,7 @@
 Contributors: ysaintlary
 Tags: woocommerce, yoast, primary category, csv, import
 Requires at least: 6.5
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP: 8.0
 Stable tag: 1.0.1
 License: GPL-3.0-or-later
