@@ -71,12 +71,12 @@ function ys_primary_cat_render_page() {
 		$count    = 0;
 
 		if ( $exists ) {
-			$handle = fopen( $csv_path, 'r' );
+			$handle = fopen( $csv_path, 'r' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen
 			fgetcsv( $handle );
 			while ( fgetcsv( $handle ) !== false ) {
-				$count++;
+				++$count;
 			}
-			fclose( $handle );
+			fclose( $handle ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose
 		}
 
 		if ( ! $exists ) {
@@ -105,7 +105,7 @@ function ys_primary_cat_process() {
 		return;
 	}
 
-	$handle = fopen( $csv_path, 'r' );
+	$handle = fopen( $csv_path, 'r' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen
 	if ( ! $handle ) {
 		echo '<div class="notice notice-error"><p>Impossible d\'ouvrir le fichier CSV.</p></div>';
 		return;
@@ -141,7 +141,7 @@ function ys_primary_cat_process() {
 		$updated++;
 	}
 
-	fclose( $handle );
+	fclose( $handle ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose
 
 	echo '<div class="notice notice-success"><p><strong>' . esc_html( $updated ) . ' produits</strong> mis à jour.</p></div>';
 
